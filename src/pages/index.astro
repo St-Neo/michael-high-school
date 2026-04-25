@@ -138,61 +138,160 @@ import Footer from '../components/Footer.astro';
 
   <!-- Our Results -->
   <section class="py-16 bg-bg">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center mb-10">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-8">
         <span class="text-gold font-semibold text-sm uppercase tracking-wider">Academic Excellence</span>
         <h2 class="text-3xl font-heading font-bold text-navy mt-2">Our Results 2024–25</h2>
       </div>
 
-      <!-- Achievement badges -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-        {[
-          { value: "100%", label: "SSC Pass Rate", sub: "March 2025" },
-          { value: "100%", label: "HSC Pass Rate", sub: "All Streams" },
-          { value: "192", label: "SSC Distinctions", sub: "Class X" },
-          { value: "42", label: "HSC Distinctions", sub: "Class XII" },
-        ].map((badge) => (
-          <div class="bg-white rounded-xl p-5 text-center shadow-sm border border-slate-100">
-            <div class="text-2xl md:text-3xl font-heading font-bold text-navy" style="font-variant-numeric: tabular-nums">{badge.value}</div>
-            <div class="text-sm font-semibold text-slate-700 mt-1">{badge.label}</div>
-            <div class="text-xs text-slate-400 mt-0.5">{badge.sub}</div>
-          </div>
-        ))}
+      <!-- Tabs -->
+      <div class="flex rounded-xl bg-white border border-slate-200 p-1 shadow-sm mb-8 max-w-xs mx-auto" role="tablist" aria-label="Results by board">
+        <button
+          id="tab-ssc"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel-ssc"
+          class="flex-1 py-2 px-4 rounded-lg text-sm font-semibold transition-colors bg-navy text-white"
+        >
+          SSC (Class X)
+        </button>
+        <button
+          id="tab-hsc"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-hsc"
+          class="flex-1 py-2 px-4 rounded-lg text-sm font-semibold transition-colors text-slate-500 hover:text-navy"
+        >
+          HSC (Class XII)
+        </button>
       </div>
 
-      <!-- Result banners -->
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="rounded-xl overflow-hidden shadow-md border border-slate-100">
-          <div class="bg-navy px-4 py-2.5 flex items-center justify-between">
-            <span class="text-white text-sm font-semibold">SSC Results — March 2025</span>
-            <span class="bg-gold text-navy text-xs font-bold px-2 py-0.5 rounded">100% Pass</span>
+      <!-- SSC Panel -->
+      <div id="panel-ssc" role="tabpanel" aria-labelledby="tab-ssc">
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center justify-center w-28 h-28 rounded-full bg-navy text-white mb-4 shadow-lg">
+            <div>
+              <div class="text-3xl font-heading font-bold leading-none">100%</div>
+              <div class="text-xs text-white/70 mt-0.5">Pass Rate</div>
+            </div>
           </div>
+          <h3 class="text-xl font-heading font-bold text-navy">SSC Results — March 2025</h3>
+          <p class="text-slate-500 text-sm mt-1">Michael High School (Primary &amp; Secondary Section)</p>
+        </div>
+        <div class="grid grid-cols-3 gap-4 mb-8">
+          {[
+            { value: "192", label: "Distinctions" },
+            { value: "169", label: "First Class" },
+            { value: "23", label: "Second Class" },
+          ].map((s) => (
+            <div class="bg-white rounded-xl p-5 text-center shadow-sm border border-slate-100">
+              <div class="text-2xl md:text-3xl font-heading font-bold text-navy" style="font-variant-numeric: tabular-nums">{s.value}</div>
+              <div class="text-xs text-slate-500 mt-1 font-medium">{s.label}</div>
+            </div>
+          ))}
+        </div>
+        <div class="relative group rounded-2xl overflow-hidden shadow-md border border-slate-100">
           <img
             src="/images/ssc-result-2024-25.jpg"
-            alt="SSC Result 2024-25 — 100% pass, 192 Distinctions, Subject-wise Toppers"
-            width="600"
-            height="450"
+            alt="SSC Result 2024-25 — full subject-wise toppers poster"
+            width="900"
+            height="675"
             loading="lazy"
             class="w-full"
           />
+          <a
+            href="/images/ssc-result-2024-25.jpg"
+            target="_blank"
+            rel="noopener"
+            aria-label="View full SSC result poster in new tab"
+            class="absolute inset-0 flex items-center justify-center bg-navy/60 opacity-0 group-hover:opacity-100 transition-opacity"
+          >
+            <span class="bg-white text-navy font-semibold text-sm px-5 py-2.5 rounded-lg shadow flex items-center gap-2">
+              <svg aria-hidden="true" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              View Full Poster
+            </span>
+          </a>
         </div>
-        <div class="rounded-xl overflow-hidden shadow-md border border-slate-100">
-          <div class="bg-navy px-4 py-2.5 flex items-center justify-between">
-            <span class="text-white text-sm font-semibold">HSC Results — 2024–25</span>
-            <span class="bg-gold text-navy text-xs font-bold px-2 py-0.5 rounded">100% Pass</span>
+      </div>
+
+      <!-- HSC Panel -->
+      <div id="panel-hsc" role="tabpanel" aria-labelledby="tab-hsc" hidden>
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center justify-center w-28 h-28 rounded-full bg-navy text-white mb-4 shadow-lg">
+            <div>
+              <div class="text-3xl font-heading font-bold leading-none">100%</div>
+              <div class="text-xs text-white/70 mt-0.5">Pass Rate</div>
+            </div>
           </div>
+          <h3 class="text-xl font-heading font-bold text-navy">HSC Results — 2024–25</h3>
+          <p class="text-slate-500 text-sm mt-1">Marceline Junior College — Science · Arts · Commerce</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          {[
+            { value: "42", label: "Distinctions" },
+            { value: "145", label: "First Class" },
+            { value: "138", label: "Second Class" },
+            { value: "336", label: "Total Students" },
+          ].map((s) => (
+            <div class="bg-white rounded-xl p-5 text-center shadow-sm border border-slate-100">
+              <div class="text-2xl md:text-3xl font-heading font-bold text-navy" style="font-variant-numeric: tabular-nums">{s.value}</div>
+              <div class="text-xs text-slate-500 mt-1 font-medium">{s.label}</div>
+            </div>
+          ))}
+        </div>
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+          {["Science — 100%", "Arts — 100%", "Commerce — 100%"].map((stream) => (
+            <span class="bg-navy/10 text-navy text-xs font-semibold px-4 py-1.5 rounded-full">{stream}</span>
+          ))}
+        </div>
+        <div class="relative group rounded-2xl overflow-hidden shadow-md border border-slate-100">
           <img
             src="/images/hsc-result-2024-25.jpg"
-            alt="HSC Result 2024-25 — 100% pass across Science, Arts &amp; Commerce streams"
-            width="600"
-            height="450"
+            alt="HSC Result 2024-25 — full subject-wise toppers poster"
+            width="900"
+            height="675"
             loading="lazy"
             class="w-full"
           />
+          <a
+            href="/images/hsc-result-2024-25.jpg"
+            target="_blank"
+            rel="noopener"
+            aria-label="View full HSC result poster in new tab"
+            class="absolute inset-0 flex items-center justify-center bg-navy/60 opacity-0 group-hover:opacity-100 transition-opacity"
+          >
+            <span class="bg-white text-navy font-semibold text-sm px-5 py-2.5 rounded-lg shadow flex items-center gap-2">
+              <svg aria-hidden="true" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              View Full Poster
+            </span>
+          </a>
         </div>
       </div>
     </div>
   </section>
+
+  <script>
+    const tabs = document.querySelectorAll<HTMLButtonElement>("[role='tab']");
+    const panels = document.querySelectorAll<HTMLElement>("[role='tabpanel']");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const target = tab.getAttribute("aria-controls")!;
+        tabs.forEach((t) => {
+          const active = t.id === tab.id;
+          t.setAttribute("aria-selected", String(active));
+          t.className = active
+            ? "flex-1 py-2 px-4 rounded-lg text-sm font-semibold transition-colors bg-navy text-white"
+            : "flex-1 py-2 px-4 rounded-lg text-sm font-semibold transition-colors text-slate-500 hover:text-navy";
+        });
+        panels.forEach((p) => { p.hidden = p.id !== target; });
+      });
+    });
+  </script>
 
   <!-- Facilities Snapshot -->
   <section class="py-16 bg-white">
