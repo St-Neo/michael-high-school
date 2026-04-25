@@ -74,22 +74,21 @@ const currentPath = Astro.url.pathname;
               )}
             </a>
             {link.children && (
-              <ul
-                role="menu"
-                class="absolute top-full left-0 mt-1 bg-white rounded-lg shadow-xl border border-slate-100 py-1 min-w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity transition-visibility duration-200 z-50"
-              >
-                {link.children.map((child) => (
-                  <li role="none">
-                    <a
-                      href={child.href}
-                      role="menuitem"
-                      class="block px-4 py-2 text-sm text-slate-700 hover:bg-navy hover:text-white transition-colors focus-visible:outline-none focus-visible:bg-navy focus-visible:text-white"
-                    >
-                      {child.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <div class="absolute top-full left-0 pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 z-50">
+                <ul role="menu" class="bg-white rounded-lg shadow-xl border border-slate-100 py-1 min-w-48">
+                  {link.children.map((child) => (
+                    <li role="none">
+                      <a
+                        href={child.href}
+                        role="menuitem"
+                        class="block px-4 py-2 text-sm text-slate-700 hover:bg-navy hover:text-white transition-colors focus-visible:outline-none focus-visible:bg-navy focus-visible:text-white"
+                      >
+                        {child.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             )}
           </li>
         ))}
