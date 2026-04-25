@@ -1,0 +1,121 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+<PageLayout
+  title="Fee Structure"
+  heroTitle="Fee Structure"
+  heroBreadcrumb={[{ label: "Fee Structure", href: "/fee-structure" }]}
+>
+  <div class="max-w-4xl mx-auto px-4 py-14">
+    <div class="bg-gold/10 border border-gold/30 rounded-xl p-5 mb-10 flex gap-3 items-start">
+      <span class="text-gold text-xl mt-0.5">ℹ️</span>
+      <p class="text-slate-700 text-sm">
+        Fee structures are subject to change. Please contact the school office for the most up-to-date fee information
+        for the current academic year.
+      </p>
+    </div>
+
+    <!-- Primary -->
+    <div class="mb-10">
+      <h2 class="text-xl font-heading font-bold text-navy mb-4 flex items-center gap-3">
+        <span class="w-8 h-0.5 bg-gold"></span> Primary Section (Pre-KG to Std V)
+      </h2>
+      <div class="bg-white rounded-xl border border-slate-100 overflow-hidden shadow-sm">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-navy text-white">
+              <th class="text-left px-6 py-3 font-semibold">Class</th>
+              <th class="text-left px-6 py-3 font-semibold">Annual Fees</th>
+              <th class="text-left px-6 py-3 font-semibold">Remarks</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["Pre-KG / Jr. KG", "As per school", "New Admissions Open"],
+              ["Std I – II", "As per school", "—"],
+              ["Std III – V", "As per school", "—"],
+            ].map(([cls, fee, remark], i) => (
+              <tr class={i % 2 === 0 ? "bg-bg" : "bg-white"}>
+                <td class="px-6 py-3 font-medium text-navy">{cls}</td>
+                <td class="px-6 py-3 text-slate-600">{fee}</td>
+                <td class="px-6 py-3 text-slate-500">{remark}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Secondary -->
+    <div class="mb-10">
+      <h2 class="text-xl font-heading font-bold text-navy mb-4 flex items-center gap-3">
+        <span class="w-8 h-0.5 bg-gold"></span> Secondary Section (Std VI – X)
+      </h2>
+      <div class="bg-white rounded-xl border border-slate-100 overflow-hidden shadow-sm">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-navy text-white">
+              <th class="text-left px-6 py-3 font-semibold">Class</th>
+              <th class="text-left px-6 py-3 font-semibold">Annual Fees</th>
+              <th class="text-left px-6 py-3 font-semibold">Remarks</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["Std VI – VII", "As per school", "—"],
+              ["Std VIII – IX", "As per school", "—"],
+              ["Std X (SSC)", "As per school", "Board Year"],
+            ].map(([cls, fee, remark], i) => (
+              <tr class={i % 2 === 0 ? "bg-bg" : "bg-white"}>
+                <td class="px-6 py-3 font-medium text-navy">{cls}</td>
+                <td class="px-6 py-3 text-slate-600">{fee}</td>
+                <td class="px-6 py-3 text-slate-500">{remark}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Junior College -->
+    <div class="mb-10">
+      <h2 class="text-xl font-heading font-bold text-navy mb-4 flex items-center gap-3">
+        <span class="w-8 h-0.5 bg-gold"></span> Junior College (Std XI – XII)
+      </h2>
+      <div class="bg-white rounded-xl border border-slate-100 overflow-hidden shadow-sm">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-navy text-white">
+              <th class="text-left px-6 py-3 font-semibold">Stream</th>
+              <th class="text-left px-6 py-3 font-semibold">Annual Fees</th>
+              <th class="text-left px-6 py-3 font-semibold">Remarks</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["Science", "As per school", "—"],
+              ["Commerce", "As per school", "—"],
+              ["Arts", "As per school", "—"],
+            ].map(([stream, fee, remark], i) => (
+              <tr class={i % 2 === 0 ? "bg-bg" : "bg-white"}>
+                <td class="px-6 py-3 font-medium text-navy">{stream}</td>
+                <td class="px-6 py-3 text-slate-600">{fee}</td>
+                <td class="px-6 py-3 text-slate-500">{remark}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="bg-navy rounded-2xl p-8 text-center text-white">
+      <h2 class="text-xl font-heading font-bold mb-2">Need More Information?</h2>
+      <p class="text-white/70 text-sm mb-5">
+        Contact the school office directly for detailed fee breakdowns, scholarship information, and payment plans.
+      </p>
+      <a href="/contact" class="inline-block bg-gold hover:bg-gold-dark text-navy font-semibold px-7 py-3 rounded-lg transition-colors">
+        Contact Us
+      </a>
+    </div>
+  </div>
+</PageLayout>

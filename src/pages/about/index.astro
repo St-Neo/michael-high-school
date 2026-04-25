@@ -1,0 +1,58 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+---
+<PageLayout
+  title="About Us"
+  heroTitle="About Us"
+  heroBreadcrumb={[{ label: "About Us", href: "/about" }]}
+>
+  <div class="max-w-7xl mx-auto px-4 py-14">
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="text-2xl font-heading font-bold text-navy mb-4">Our Story</h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Michael High School &amp; Junior College was established in 1979 by the Catholic Education Society (CES).
+          Located in the heart of Kurla West, Mumbai, the institution has grown from a small school to one of the
+          most respected educational establishments in the city, with over 8,500 students on a sprawling 3-acre campus.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Guided by Christian values and a commitment to academic excellence, Michael High School has produced
+          thousands of alumni who have gone on to distinguished careers in every field imaginable.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          Our institution is affiliated with the relevant educational boards and is accredited for its outstanding
+          contribution to quality education in Maharashtra.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="/about/mission-vision" class="bg-navy text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-navy-dark transition-colors">Mission &amp; Vision</a>
+          <a href="/about/staff" class="border border-navy text-navy px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-navy hover:text-white transition-colors">Our Staff</a>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <div class="rounded-2xl overflow-hidden shadow-lg">
+          <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80" alt="Michael High School campus" class="w-full h-64 object-cover" />
+        </div>
+        <!-- Timeline -->
+        <div class="bg-bg rounded-xl p-6 border border-slate-100">
+          <h3 class="font-heading font-bold text-navy mb-4">Key Milestones</h3>
+          <ol class="space-y-3">
+            {[
+              { year: "1979", event: "School founded by Catholic Education Society" },
+              { year: "1990s", event: "Expanded to Junior College (HSC)" },
+              { year: "2000s", event: "Campus expansion to 3 acres" },
+              { year: "2010s", event: "E-sense boards & IT infrastructure rollout" },
+              { year: "2020s", event: "RFID attendance & LED video wall installed" },
+            ].map((m) => (
+              <li class="flex gap-3 text-sm">
+                <span class="font-bold text-gold shrink-0 w-12">{m.year}</span>
+                <span class="text-slate-600">{m.event}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</PageLayout>

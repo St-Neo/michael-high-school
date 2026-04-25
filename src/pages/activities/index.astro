@@ -1,0 +1,58 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+---
+<PageLayout
+  title="Activities"
+  heroTitle="Activities"
+  heroBreadcrumb={[{ label: "Activities", href: "/activities" }]}
+>
+  <div class="max-w-6xl mx-auto px-4 py-14">
+    <p class="text-slate-600 text-center max-w-2xl mx-auto mb-12 text-lg">
+      At Michael High School, learning goes far beyond the classroom. We offer a rich calendar of scholastic
+      and co-scholastic activities that develop well-rounded, confident individuals.
+    </p>
+    <div class="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          title: "Scholastic Activities",
+          icon: "📖",
+          desc: "Academic competitions, Olympiads, quiz bowls, science fairs, and inter-school events that push students to achieve more.",
+          href: "/activities/scholastic",
+          bg: "bg-navy",
+          text: "text-white",
+          subtext: "text-white/70",
+          btn: "bg-gold text-navy",
+        },
+        {
+          title: "Co-Scholastic Activities",
+          icon: "🎨",
+          desc: "Sports, arts, music, dance, and cultural programmes that nurture creativity, fitness, and team spirit.",
+          href: "/activities/co-scholastic",
+          bg: "bg-gold",
+          text: "text-navy",
+          subtext: "text-navy/70",
+          btn: "bg-navy text-white",
+        },
+        {
+          title: "Departments & Clubs",
+          icon: "🏅",
+          desc: "Student-led clubs in areas like debate, robotics, environment, and social service — developing leadership from day one.",
+          href: "/activities/departments-clubs",
+          bg: "bg-bg border border-slate-100",
+          text: "text-navy",
+          subtext: "text-slate-600",
+          btn: "bg-navy text-white",
+        },
+      ].map((item) => (
+        <div class={`rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow ${item.bg}`}>
+          <div class="text-5xl mb-5">{item.icon}</div>
+          <h2 class={`font-heading font-bold text-2xl mb-3 ${item.text}`}>{item.title}</h2>
+          <p class={`text-sm leading-relaxed mb-6 ${item.subtext}`}>{item.desc}</p>
+          <a href={item.href} class={`inline-block ${item.btn} font-semibold px-5 py-2.5 rounded-lg text-sm transition-opacity hover:opacity-90`}>
+            Explore →
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</PageLayout>

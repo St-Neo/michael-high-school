@@ -1,0 +1,46 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  heroTitle?: string;
+  heroBreadcrumb?: { label: string; href: string }[];
+}
+
+const { title, description, heroTitle, heroBreadcrumb } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <Navbar />
+
+  {heroTitle && (
+    <section class="bg-navy py-10 md:py-14">
+      <div class="max-w-7xl mx-auto px-4">
+        {heroBreadcrumb && (
+          <nav class="flex gap-2 text-white/50 text-sm mb-3" aria-label="Breadcrumb">
+            <a href="/" class="hover:text-gold transition-colors">Home</a>
+            {heroBreadcrumb.map((crumb, i) => (
+              <>
+                <span>/</span>
+                {i === heroBreadcrumb.length - 1
+                  ? <span class="text-gold">{crumb.label}</span>
+                  : <a href={crumb.href} class="hover:text-gold transition-colors">{crumb.label}</a>
+                }
+              </>
+            ))}
+          </nav>
+        )}
+        <h1 class="text-3xl md:text-4xl font-heading font-bold text-white">{heroTitle}</h1>
+        <div class="mt-3 w-16 h-1 bg-gold rounded"></div>
+      </div>
+    </section>
+  )}
+
+  <main id="main-content" class="min-h-screen">
+    <slot />
+  </main>
+
+  <Footer />
+</BaseLayout>

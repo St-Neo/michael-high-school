@@ -1,0 +1,56 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+<PageLayout
+  title="Accreditation"
+  heroTitle="Accreditation"
+  heroBreadcrumb={[{ label: "Accreditation", href: "/accreditation" }]}
+>
+  <div class="max-w-4xl mx-auto px-4 py-14">
+    <p class="text-slate-600 text-center max-w-2xl mx-auto mb-12 text-lg">
+      Michael High School is recognised and accredited by the relevant educational authorities, affirming
+      our commitment to quality education.
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-6 mb-12">
+      {[
+        {
+          icon: "🏛️",
+          title: "Maharashtra State Board",
+          body: "Affiliated with the Maharashtra State Board of Secondary & Higher Secondary Education (MSBSHSE) for SSC (Std X) and HSC (Std XII) examinations.",
+        },
+        {
+          icon: "✝️",
+          title: "Catholic Education Society",
+          body: "Managed and governed under the Catholic Education Society (CES), a recognised body overseeing quality Catholic institutions across Mumbai.",
+        },
+        {
+          icon: "🎓",
+          title: "Government Recognition",
+          body: "Fully recognised by the Government of Maharashtra, Department of Education, as an institution compliant with all regulatory standards.",
+        },
+        {
+          icon: "⭐",
+          title: "Community Trust",
+          body: "Over four decades of educational excellence have earned Michael High School the trust and respect of thousands of families in Kurla and beyond.",
+        },
+      ].map((a) => (
+        <div class="bg-white rounded-xl border border-slate-100 p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-4xl mb-4">{a.icon}</div>
+          <h3 class="font-heading font-bold text-navy text-lg mb-2">{a.title}</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">{a.body}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="bg-navy rounded-2xl p-8 text-center text-white">
+      <h2 class="text-2xl font-heading font-bold mb-3">Certificate of Excellence</h2>
+      <p class="text-white/70 mb-5">
+        For official accreditation documents and certificates, please contact the school administration.
+      </p>
+      <a href="/contact" class="inline-block bg-gold hover:bg-gold-dark text-navy font-semibold px-7 py-3 rounded-lg transition-colors">
+        Contact Administration
+      </a>
+    </div>
+  </div>
+</PageLayout>

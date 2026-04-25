@@ -1,0 +1,84 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const staffByDept = [
+  {
+    dept: "Leadership",
+    members: [
+      { name: "Moses Gomes", role: "Principal" },
+      { name: "Jean Moses Gomes", role: "Vice Principal" },
+      { name: "Savvy M. Mendonca", role: "Administrative Head" },
+    ],
+  },
+  {
+    dept: "Primary Section",
+    members: [
+      { name: "Head of Primary", role: "Section Head" },
+      { name: "Class Teachers (Pre-KG to Std V)", role: "Teaching Staff" },
+    ],
+  },
+  {
+    dept: "Secondary Section",
+    members: [
+      { name: "Head of Secondary", role: "Section Head" },
+      { name: "Subject Teachers (Std VI–X)", role: "Teaching Staff" },
+    ],
+  },
+  {
+    dept: "Junior College",
+    members: [
+      { name: "Head of Junior College", role: "Section Head" },
+      { name: "Lecturers (Std XI–XII)", role: "Teaching Staff" },
+    ],
+  },
+  {
+    dept: "Support Staff",
+    members: [
+      { name: "Librarian", role: "Library" },
+      { name: "Lab Assistants", role: "Science Labs" },
+      { name: "IT Coordinator", role: "IT Department" },
+      { name: "Medical Officer", role: "Medical Centre" },
+    ],
+  },
+];
+---
+<PageLayout
+  title="Staff"
+  heroTitle="Our Staff"
+  heroBreadcrumb={[{ label: "About Us", href: "/about" }, { label: "Staff", href: "/about/staff" }]}
+>
+  <div class="max-w-5xl mx-auto px-4 py-14">
+    <p class="text-slate-600 text-center max-w-2xl mx-auto mb-12">
+      Our dedicated team of educators and support staff work tirelessly to ensure every student receives
+      a world-class education in a nurturing environment.
+    </p>
+
+    <div class="space-y-10">
+      {staffByDept.map((section) => (
+        <div>
+          <h2 class="text-xl font-heading font-bold text-navy mb-4 flex items-center gap-3">
+            <span class="w-8 h-0.5 bg-gold"></span>
+            {section.dept}
+          </h2>
+          <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {section.members.map((member) => (
+              <div class="bg-white rounded-xl border border-slate-100 p-5 shadow-sm hover:shadow-md transition-shadow flex items-center gap-4">
+                <div class="w-11 h-11 bg-navy/10 rounded-full flex items-center justify-center text-xl shrink-0">👤</div>
+                <div>
+                  <div class="font-semibold text-navy text-sm">{member.name}</div>
+                  <div class="text-slate-500 text-xs mt-0.5">{member.role}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 bg-gold/10 border border-gold/30 rounded-xl p-6 text-center">
+      <p class="text-slate-700 text-sm">
+        For the complete staff directory, please <a href="/contact" class="text-navy font-semibold underline hover:text-gold">contact the school office</a>.
+      </p>
+    </div>
+  </div>
+</PageLayout>

@@ -1,0 +1,57 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const committees = [
+  {
+    name: "Parent-Teacher Association (PTA)",
+    desc: "A collaborative body of parents and teachers working together to enhance the school's educational environment and address student welfare.",
+    icon: "🤝",
+  },
+  {
+    name: "School Management Committee (SMC)",
+    desc: "Oversees the overall governance, policy-making, and strategic direction of the school in line with educational board guidelines.",
+    icon: "🏛️",
+  },
+  {
+    name: "Discipline Committee",
+    desc: "Maintains a positive and safe school environment by setting and upholding standards of conduct for students and staff.",
+    icon: "⚖️",
+  },
+  {
+    name: "Cultural Committee",
+    desc: "Plans and organises cultural events, annual day celebrations, inter-house competitions, and other co-curricular programmes.",
+    icon: "🎭",
+  },
+  {
+    name: "Sports Committee",
+    desc: "Promotes physical fitness and sportsmanship through inter-school tournaments, sports day, and regular physical education activities.",
+    icon: "🏆",
+  },
+  {
+    name: "Examination Committee",
+    desc: "Responsible for the fair and efficient conduct of internal and board examinations, timetables, and result processing.",
+    icon: "📋",
+  },
+];
+---
+<PageLayout
+  title="Committees"
+  heroTitle="Committees"
+  heroBreadcrumb={[{ label: "About Us", href: "/about" }, { label: "Committees", href: "/about/committees" }]}
+>
+  <div class="max-w-5xl mx-auto px-4 py-14">
+    <p class="text-slate-600 text-center max-w-2xl mx-auto mb-12">
+      Our various committees play a vital role in the smooth functioning of the school and the holistic
+      development of our students.
+    </p>
+    <div class="grid sm:grid-cols-2 gap-6">
+      {committees.map((c) => (
+        <div class="bg-white rounded-xl border border-slate-100 p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-3xl mb-3">{c.icon}</div>
+          <h3 class="font-heading font-bold text-navy text-lg mb-2">{c.name}</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">{c.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</PageLayout>

@@ -1,0 +1,68 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+---
+<PageLayout
+  title="General Information"
+  heroTitle="General Information"
+  heroBreadcrumb={[{ label: "About Us", href: "/about" }, { label: "General Information", href: "/about/general-information" }]}
+>
+  <div class="max-w-4xl mx-auto px-4 py-14">
+    <div class="grid gap-6">
+      {[
+        {
+          heading: "School Name",
+          value: "Michael High School & Junior College",
+        },
+        {
+          heading: "Managed By",
+          value: "Catholic Education Society (CES)",
+        },
+        {
+          heading: "Established",
+          value: "1979",
+        },
+        {
+          heading: "Address",
+          value: "Plot No. 249/8, Lal Bahadur Shastri Marg, Kurla West, Mumbai – 400070",
+        },
+        {
+          heading: "Contact Numbers",
+          value: "9136693263 / 8104286899",
+        },
+        {
+          heading: "Email",
+          value: "cesmhs1979@gmail.com",
+        },
+        {
+          heading: "Campus Area",
+          value: "3 Acres",
+        },
+        {
+          heading: "Total Students",
+          value: "8,500+",
+        },
+        {
+          heading: "Boards Affiliated",
+          value: "SSC (Secondary School Certificate) & HSC (Higher Secondary Certificate)",
+        },
+        {
+          heading: "Classes Offered",
+          value: "Pre-KG to Class XII (Junior College)",
+        },
+        {
+          heading: "Medium of Instruction",
+          value: "English",
+        },
+        {
+          heading: "School Type",
+          value: "Co-educational (Boys & Girls)",
+        },
+      ].map((info) => (
+        <div class="bg-white rounded-xl border border-slate-100 p-5 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 shadow-sm">
+          <span class="text-sm font-semibold text-gold w-48 shrink-0">{info.heading}</span>
+          <span class="text-slate-700">{info.value}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</PageLayout>

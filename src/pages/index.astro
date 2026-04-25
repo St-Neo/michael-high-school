@@ -1,0 +1,274 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout title="Home">
+  <Navbar />
+
+  <!-- Admission Banner -->
+  <div class="bg-gold text-navy text-sm font-semibold text-center py-2.5 px-4">
+    🎒 Admissions Open for Pre-KG &amp; Junior KG — Academic Year 2026–2027.
+    <a href="/contact" class="underline ml-2 hover:opacity-80">Enquire Now →</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative bg-navy overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=80"
+        alt=""
+        aria-hidden="true"
+        width="1600"
+        height="900"
+        fetchpriority="high"
+        class="w-full h-full object-cover opacity-20"
+      />
+    </div>
+    <div id="main-content" class="relative max-w-7xl mx-auto px-4 py-20 md:py-32 flex flex-col items-center text-center">
+      <img
+        src="https://www.michaelhighschool.com/wp-content/uploads/2016/03/headerlogo.gif"
+        alt="Catholic Education Society crest"
+        width="72"
+        height="72"
+        class="mb-5 rounded-full bg-white p-1 shadow-lg"
+      />
+      <div class="inline-flex items-center gap-2 bg-white/10 text-white/80 text-xs font-medium px-4 py-1.5 rounded-full mb-4">
+        <span class="w-1.5 h-1.5 bg-gold rounded-full" aria-hidden="true"></span>
+        Catholic Education Society · Est.&nbsp;1979
+      </div>
+      <h1 class="text-4xl md:text-6xl font-heading font-bold text-white leading-tight max-w-3xl" style="text-wrap: balance">
+        Welcome to <span class="text-gold">Michael High School</span>
+      </h1>
+      <p class="mt-4 text-base md:text-lg text-white/75 max-w-xl leading-relaxed">
+        &amp; Marceline Junior College of Arts, Science &amp; Commerce<br class="hidden md:block" />
+        Kurla West, Mumbai — Nurturing minds since 1979.
+      </p>
+      <div class="flex flex-wrap gap-4 mt-8 justify-center">
+        <a href="/about" class="bg-gold hover:bg-gold-dark text-navy font-semibold px-7 py-3 rounded-lg transition-colors">
+          Explore School
+        </a>
+        <a href="/contact" class="border border-white/40 hover:border-gold text-white hover:text-gold font-semibold px-7 py-3 rounded-lg transition-colors">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Row -->
+  <section class="bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      {[
+        { value: "8,500+", label: "Students" },
+        { value: "3 Acres", label: "Campus" },
+        { value: "Est. 1979", label: "Founded" },
+        { value: "SSC & HSC", label: "Boards" },
+      ].map((stat) => (
+        <div>
+          <div class="text-2xl md:text-3xl font-heading font-bold text-navy" style="font-variant-numeric: tabular-nums">{stat.value}</div>
+          <div class="text-slate-500 text-sm mt-1">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Welcome Section -->
+  <section class="py-16 md:py-20 bg-bg">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-gold font-semibold text-sm uppercase tracking-wider">Welcome</span>
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-navy mt-2 mb-5" style="text-wrap: balance">
+          A Legacy of Excellence in Education
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Michael High School &amp; Marceline Junior College of Arts, Science &amp; Commerce is managed by the
+          Catholic Education Society (CES). Since 1979, we have been a cornerstone of quality education in
+          Kurla West, Mumbai — a community of over 8,500 students on a sprawling 3-acre campus.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          Our dedicated faculty and state-of-the-art infrastructure ensure every child receives the best
+          possible foundation for life.
+        </p>
+        <a href="/about" class="inline-block mt-6 text-navy font-semibold border-b-2 border-gold hover:text-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">
+          Learn More About Us →
+        </a>
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-xl">
+        <img
+          src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80"
+          alt="Students engaged in classroom learning"
+          width="800"
+          height="500"
+          loading="lazy"
+          class="w-full h-72 md:h-80 object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <span class="text-gold font-semibold text-sm uppercase tracking-wider">Our Leaders</span>
+        <h2 class="text-3xl font-heading font-bold text-navy mt-2">Meet the Leadership Team</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          { name: "Moses Gomes", role: "Principal", icon: "👨‍💼" },
+          { name: "Jean Moses Gomes", role: "Vice Principal", icon: "👩‍🏫" },
+          { name: "Savvy M. Mendonca", role: "Administrative Head", icon: "👩‍💼" },
+        ].map((person) => (
+          <div class="bg-bg rounded-xl p-6 text-center shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+            <div class="w-20 h-20 bg-navy/10 rounded-full flex items-center justify-center text-3xl mx-auto mb-4" aria-hidden="true">
+              {person.icon}
+            </div>
+            <h3 class="font-heading font-bold text-navy text-lg">{person.name}</h3>
+            <p class="text-slate-500 text-sm mt-1">{person.role}</p>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <a href="/about/staff" class="text-navy font-semibold border-b-2 border-gold hover:text-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">
+          View Full Staff Directory →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Results -->
+  <section class="py-16 bg-bg">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <span class="text-gold font-semibold text-sm uppercase tracking-wider">Academic Excellence</span>
+        <h2 class="text-3xl font-heading font-bold text-navy mt-2">Our Results 2024–25</h2>
+      </div>
+
+      <!-- Achievement badges -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+        {[
+          { value: "100%", label: "SSC Pass Rate", sub: "March 2025" },
+          { value: "100%", label: "HSC Pass Rate", sub: "All Streams" },
+          { value: "192", label: "SSC Distinctions", sub: "Class X" },
+          { value: "42", label: "HSC Distinctions", sub: "Class XII" },
+        ].map((badge) => (
+          <div class="bg-white rounded-xl p-5 text-center shadow-sm border border-slate-100">
+            <div class="text-2xl md:text-3xl font-heading font-bold text-navy" style="font-variant-numeric: tabular-nums">{badge.value}</div>
+            <div class="text-sm font-semibold text-slate-700 mt-1">{badge.label}</div>
+            <div class="text-xs text-slate-400 mt-0.5">{badge.sub}</div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Result banners -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-xl overflow-hidden shadow-md border border-slate-100">
+          <div class="bg-navy px-4 py-2.5 flex items-center justify-between">
+            <span class="text-white text-sm font-semibold">SSC Results — March 2025</span>
+            <span class="bg-gold text-navy text-xs font-bold px-2 py-0.5 rounded">100% Pass</span>
+          </div>
+          <img
+            src="/images/ssc-result-2024-25.jpg"
+            alt="SSC Result 2024-25 — 100% pass, 192 Distinctions, Subject-wise Toppers"
+            width="600"
+            height="450"
+            loading="lazy"
+            class="w-full"
+          />
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-md border border-slate-100">
+          <div class="bg-navy px-4 py-2.5 flex items-center justify-between">
+            <span class="text-white text-sm font-semibold">HSC Results — 2024–25</span>
+            <span class="bg-gold text-navy text-xs font-bold px-2 py-0.5 rounded">100% Pass</span>
+          </div>
+          <img
+            src="/images/hsc-result-2024-25.jpg"
+            alt="HSC Result 2024-25 — 100% pass across Science, Arts &amp; Commerce streams"
+            width="600"
+            height="450"
+            loading="lazy"
+            class="w-full"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilities Snapshot -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <span class="text-gold font-semibold text-sm uppercase tracking-wider">Infrastructure</span>
+        <h2 class="text-3xl font-heading font-bold text-navy mt-2">World-Class Facilities</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { icon: "📺", title: "E-Sense Boards", desc: "Interactive digital boards in every classroom" },
+          { icon: "🔬", title: "Science Labs", desc: "Fully equipped Physics, Chemistry & Biology labs" },
+          { icon: "📚", title: "Library", desc: "Extensive collection of books and learning resources" },
+          { icon: "🛡️", title: "200+ CCTV Cameras", desc: "Campus-wide safety and security surveillance" },
+          { icon: "💧", title: "RO + UV Water", desc: "Clean, purified drinking water throughout campus" },
+          { icon: "💻", title: "IT Labs", desc: "Modern computer labs with internet access" },
+          { icon: "🏥", title: "Medical Centre", desc: "On-site medical care for students and staff" },
+          { icon: "📱", title: "RFID Attendance", desc: "Smart automated student attendance system" },
+        ].map((f) => (
+          <div class="bg-bg rounded-xl p-5 shadow-sm border border-slate-100 hover:border-gold/40 hover:shadow-md transition-shadow">
+            <div class="text-3xl mb-3" aria-hidden="true">{f.icon}</div>
+            <h3 class="font-semibold text-navy text-sm mb-1">{f.title}</h3>
+            <p class="text-slate-500 text-xs leading-relaxed">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <a href="/facilities" class="bg-navy hover:bg-navy-dark text-white font-semibold px-7 py-3 rounded-lg transition-colors inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2">
+          View All Facilities
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities Preview -->
+  <section class="py-16 bg-bg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <span class="text-gold font-semibold text-sm uppercase tracking-wider">Student Life</span>
+        <h2 class="text-3xl font-heading font-bold text-navy mt-2">Beyond the Classroom</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            title: "Scholastic Activities",
+            desc: "Academic competitions, Olympiads, science fairs, and inter-school events that challenge and inspire.",
+            href: "/activities/scholastic",
+            img: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=600&q=80",
+          },
+          {
+            title: "Co-Scholastic Activities",
+            desc: "Sports, arts, music, and cultural events that nurture creativity and physical well-being.",
+            href: "/activities/co-scholastic",
+            img: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80",
+          },
+          {
+            title: "Departments & Clubs",
+            desc: "From debate to robotics — student-led clubs that foster passion and leadership.",
+            href: "/activities/departments-clubs",
+            img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80",
+          },
+        ].map((item) => (
+          <a href={item.href} class="group block rounded-xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-lg transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
+            <div class="h-48 overflow-hidden">
+              <img src={item.img} alt={item.title} width="600" height="400" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-5">
+              <h3 class="font-heading font-bold text-navy text-lg mb-2">{item.title}</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              <span class="mt-3 inline-block text-gold font-semibold text-sm">Learn more →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

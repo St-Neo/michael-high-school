@@ -1,0 +1,82 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const facilities = [
+  {
+    icon: "📺",
+    name: "E-Sense Interactive Boards",
+    desc: "Every classroom is equipped with E-sense interactive digital boards, transforming traditional lessons into engaging, multimedia-rich experiences for students.",
+    highlight: true,
+  },
+  {
+    icon: "🛡️",
+    name: "200+ CCTV Cameras",
+    desc: "A comprehensive CCTV surveillance system with over 200 cameras ensures the safety and security of every student and staff member across the entire campus.",
+    highlight: true,
+  },
+  {
+    icon: "💧",
+    name: "RO + UV Water Purification",
+    desc: "Purified drinking water through RO and UV filtration systems is available throughout the campus, ensuring the health of our students at all times.",
+    highlight: false,
+  },
+  {
+    icon: "🔬",
+    name: "Science Laboratories",
+    desc: "Fully equipped Physics, Chemistry, and Biology laboratories provide students with hands-on experimental learning opportunities aligned with the curriculum.",
+    highlight: false,
+  },
+  {
+    icon: "💻",
+    name: "IT Laboratories",
+    desc: "Modern computer labs with high-speed internet access give students the digital literacy skills needed for the 21st century.",
+    highlight: false,
+  },
+  {
+    icon: "📚",
+    name: "Library",
+    desc: "A well-stocked library containing thousands of books, periodicals, and reference materials to encourage a culture of reading and research.",
+    highlight: false,
+  },
+  {
+    icon: "🏥",
+    name: "Medical Centre",
+    desc: "An on-site medical centre staffed by a qualified medical officer, ready to attend to the health needs of students and staff during school hours.",
+    highlight: false,
+  },
+  {
+    icon: "📱",
+    name: "RFID Attendance System",
+    desc: "A smart RFID-based attendance system ensures accurate tracking of student attendance and provides parents with timely updates.",
+    highlight: true,
+  },
+  {
+    icon: "📽️",
+    name: "LED Video Wall",
+    desc: "A large LED video wall in the school's main assembly area is used for announcements, events, and student presentations.",
+    highlight: false,
+  },
+];
+---
+<PageLayout
+  title="Facilities"
+  heroTitle="Facilities"
+  heroBreadcrumb={[{ label: "Facilities", href: "/facilities" }]}
+>
+  <div class="max-w-6xl mx-auto px-4 py-14">
+    <p class="text-slate-600 text-center max-w-2xl mx-auto mb-12 text-lg">
+      We believe that the right environment makes all the difference. Our world-class infrastructure supports
+      every dimension of student growth.
+    </p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {facilities.map((f) => (
+        <div class={`rounded-xl p-6 shadow-sm border transition-shadow hover:shadow-md ${f.highlight ? "bg-navy text-white border-navy" : "bg-white border-slate-100"}`}>
+          <div class="text-4xl mb-4">{f.icon}</div>
+          <h3 class={`font-heading font-bold text-lg mb-2 ${f.highlight ? "text-gold" : "text-navy"}`}>{f.name}</h3>
+          <p class={`text-sm leading-relaxed ${f.highlight ? "text-white/75" : "text-slate-600"}`}>{f.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</PageLayout>

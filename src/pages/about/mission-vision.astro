@@ -1,0 +1,52 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+---
+<PageLayout
+  title="Mission & Vision"
+  heroTitle="Mission & Vision"
+  heroBreadcrumb={[{ label: "About Us", href: "/about" }, { label: "Mission & Vision", href: "/about/mission-vision" }]}
+>
+  <div class="max-w-5xl mx-auto px-4 py-14">
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <!-- Mission -->
+      <div class="bg-navy text-white rounded-2xl p-8 shadow-lg">
+        <div class="w-12 h-12 bg-gold rounded-xl flex items-center justify-center text-2xl mb-5">🎯</div>
+        <h2 class="text-2xl font-heading font-bold mb-4">Our Mission</h2>
+        <p class="text-white/80 leading-relaxed">
+          To provide quality, value-based education that nurtures the intellectual, spiritual, moral, and physical
+          development of every student — empowering them to become responsible citizens and compassionate human beings.
+        </p>
+      </div>
+      <!-- Vision -->
+      <div class="bg-gold rounded-2xl p-8 shadow-lg">
+        <div class="w-12 h-12 bg-navy rounded-xl flex items-center justify-center text-2xl mb-5">🌟</div>
+        <h2 class="text-2xl font-heading font-bold text-navy mb-4">Our Vision</h2>
+        <p class="text-navy/80 leading-relaxed">
+          To be a centre of excellence that inspires lifelong learning, fosters innovation, and shapes leaders
+          of character who contribute meaningfully to society and the nation.
+        </p>
+      </div>
+    </div>
+
+    <!-- Core Values -->
+    <div class="bg-bg rounded-2xl p-8 border border-slate-100">
+      <h2 class="text-2xl font-heading font-bold text-navy mb-6 text-center">Core Values</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+        {[
+          { icon: "✝️", value: "Faith", desc: "Grounded in Christian values and moral principles" },
+          { icon: "🤝", value: "Integrity", desc: "Honesty and transparency in all actions" },
+          { icon: "📖", value: "Excellence", desc: "Striving for the highest standards in education" },
+          { icon: "❤️", value: "Compassion", desc: "Care and respect for every individual" },
+          { icon: "🌍", value: "Service", desc: "Commitment to community and social responsibility" },
+          { icon: "💡", value: "Innovation", desc: "Embracing new ideas and creative thinking" },
+        ].map((v) => (
+          <div class="text-center p-4">
+            <div class="text-3xl mb-2">{v.icon}</div>
+            <h3 class="font-heading font-bold text-navy text-base mb-1">{v.value}</h3>
+            <p class="text-slate-500 text-sm">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</PageLayout>

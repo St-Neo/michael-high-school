@@ -1,0 +1,46 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const clubs = [
+  { icon: "🗣️", name: "Debate Club", desc: "Develops public speaking, argumentation, and critical thinking through regular debates and model UN sessions." },
+  { icon: "🌿", name: "Eco Club", desc: "Promotes environmental awareness through plantation drives, waste management, and eco-friendly initiatives." },
+  { icon: "🤖", name: "Robotics Club", desc: "Hands-on club exploring programming, electronics, and robotics through exciting build challenges." },
+  { icon: "📖", name: "Literary Club", desc: "Encourages reading, creative writing, and storytelling among students." },
+  { icon: "🎨", name: "Art Club", desc: "A creative space for students passionate about drawing, painting, and mixed media." },
+  { icon: "🎵", name: "Music Club", desc: "Instrumental and vocal ensembles that perform at school events and competitions." },
+  { icon: "📸", name: "Photography Club", desc: "Learn composition, editing, and visual storytelling through hands-on photography projects." },
+  { icon: "❤️", name: "Social Service Club", desc: "Organises community outreach, charity events, and visits to NGOs and homes for the elderly." },
+  { icon: "🧠", name: "Quiz Club", desc: "Weekly quiz sessions covering general knowledge, current affairs, and subject-specific topics." },
+];
+---
+<PageLayout
+  title="Departments & Clubs"
+  heroTitle="Departments & Clubs"
+  heroBreadcrumb={[{ label: "Activities", href: "/activities" }, { label: "Departments & Clubs", href: "/activities/departments-clubs" }]}
+>
+  <div class="max-w-5xl mx-auto px-4 py-14">
+    <p class="text-slate-600 text-center max-w-2xl mx-auto mb-12">
+      Our clubs and departments are student-led, teacher-guided spaces where passion meets purpose.
+      Every student is encouraged to find their niche and lead.
+    </p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {clubs.map((club) => (
+        <div class="bg-white rounded-xl border border-slate-100 p-6 shadow-sm hover:shadow-md hover:border-gold/40 transition-all">
+          <div class="text-3xl mb-3">{club.icon}</div>
+          <h3 class="font-heading font-bold text-navy text-base mb-2">{club.name}</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">{club.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 bg-navy rounded-2xl p-8 text-center text-white">
+      <h2 class="text-xl font-heading font-bold mb-2">Want to Start a New Club?</h2>
+      <p class="text-white/70 text-sm mb-5">
+        Students with a passion for any area can propose a new club to the Cultural Committee. We support every interest.
+      </p>
+      <a href="/contact" class="inline-block bg-gold hover:bg-gold-dark text-navy font-semibold px-7 py-3 rounded-lg transition-colors">
+        Get in Touch
+      </a>
+    </div>
+  </div>
+</PageLayout>

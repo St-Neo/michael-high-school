@@ -1,0 +1,49 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+---
+<PageLayout
+  title="Anthem Song"
+  heroTitle="Anthem Song"
+  heroBreadcrumb={[{ label: "About Us", href: "/about" }, { label: "Anthem Song", href: "/about/anthem" }]}
+>
+  <div class="max-w-3xl mx-auto px-4 py-14">
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+      <!-- Header -->
+      <div class="bg-navy px-8 py-6 text-center">
+        <div class="text-gold text-4xl mb-2">🎵</div>
+        <h2 class="text-2xl font-heading font-bold text-white">School Anthem</h2>
+        <p class="text-white/60 text-sm mt-1">Michael High School &amp; Junior College</p>
+      </div>
+
+      <!-- Lyrics -->
+      <div class="px-8 py-10 text-center space-y-6">
+        <p class="text-slate-700 leading-8 text-lg font-medium italic">
+          "We are the students of Michael High,<br />
+          We hold our heads up, we reach for the sky,<br />
+          With faith and knowledge we lead the way,<br />
+          God bless our school each passing day."
+        </p>
+        <div class="w-12 h-0.5 bg-gold mx-auto"></div>
+        <p class="text-slate-600 leading-8">
+          "In classrooms bright and friendships true,<br />
+          We learn to dream and to pursue,<br />
+          With Michael's spirit, strong and clear,<br />
+          We'll serve our world throughout the year."
+        </p>
+        <div class="w-12 h-0.5 bg-gold mx-auto"></div>
+        <p class="text-slate-700 leading-8 text-lg font-medium italic">
+          "Forward together, Michael's pride,<br />
+          With truth and honour as our guide,<br />
+          We march ahead to build our nation,<br />
+          Michael High, our inspiration!"
+        </p>
+      </div>
+
+      <div class="px-8 pb-8 text-center">
+        <p class="text-slate-400 text-xs">
+          Note: Lyrics displayed are representative. Contact the school for the official anthem text.
+        </p>
+      </div>
+    </div>
+  </div>
+</PageLayout>

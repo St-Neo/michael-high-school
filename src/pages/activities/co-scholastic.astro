@@ -1,0 +1,63 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+---
+<PageLayout
+  title="Co-Scholastic Activities"
+  heroTitle="Co-Scholastic Activities"
+  heroBreadcrumb={[{ label: "Activities", href: "/activities" }, { label: "Co-Scholastic Activities", href: "/activities/co-scholastic" }]}
+>
+  <div class="max-w-5xl mx-auto px-4 py-14">
+    <p class="text-slate-600 text-center max-w-2xl mx-auto mb-12">
+      Co-scholastic activities at Michael High School are as integral to our curriculum as academics.
+      We believe that a student's growth is shaped equally by the arts, sports, and culture.
+    </p>
+
+    <!-- Sports -->
+    <div class="mb-12">
+      <h2 class="text-xl font-heading font-bold text-navy mb-6 flex items-center gap-3">
+        <span class="text-2xl">🏃</span> Sports
+      </h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+        {["Cricket", "Football", "Basketball", "Volleyball", "Kho-Kho", "Kabaddi", "Athletics", "Badminton"].map((sport) => (
+          <div class="bg-navy text-white rounded-xl p-4 text-center text-sm font-semibold hover:bg-navy-dark transition-colors">
+            {sport}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Arts & Culture -->
+    <div class="mb-12">
+      <h2 class="text-xl font-heading font-bold text-navy mb-6 flex items-center gap-3">
+        <span class="text-2xl">🎭</span> Arts &amp; Culture
+      </h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {[
+          { icon: "🎵", title: "Music", desc: "Vocal and instrumental training with annual music performances." },
+          { icon: "💃", title: "Dance", desc: "Classical, folk, and contemporary dance forms, including annual day performances." },
+          { icon: "🎨", title: "Drawing & Painting", desc: "Art classes and competitions that celebrate student creativity." },
+          { icon: "🎤", title: "Drama & Theatre", desc: "School plays, skits, and theatrical productions throughout the year." },
+          { icon: "📷", title: "Photography", desc: "Visual storytelling workshops and competitions for young photographers." },
+          { icon: "🎪", title: "Annual Day", desc: "Grand annual celebration showcasing all student talent and achievements." },
+        ].map((a) => (
+          <div class="bg-white rounded-xl border border-slate-100 p-5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-3xl mb-2">{a.icon}</div>
+            <h3 class="font-heading font-bold text-navy text-sm mb-1">{a.title}</h3>
+            <p class="text-slate-600 text-xs leading-relaxed">{a.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Social Service -->
+    <div class="bg-gold/10 border border-gold/30 rounded-2xl p-8">
+      <h2 class="text-xl font-heading font-bold text-navy mb-3 flex items-center gap-3">
+        <span class="text-2xl">🤲</span> Social Service
+      </h2>
+      <p class="text-slate-600 text-sm leading-relaxed">
+        Grounded in our Catholic values, students regularly participate in community outreach, charity drives,
+        clean-up campaigns, and visits to homes for the elderly — nurturing compassion and social responsibility.
+      </p>
+    </div>
+  </div>
+</PageLayout>
