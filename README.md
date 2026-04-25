@@ -1,43 +1,73 @@
-# Astro Starter Kit: Minimal
+# Michael High School & Marceline Junior College — Website Redesign
 
-```sh
-npm create astro@latest -- --template minimal
-```
+A free, modern redesign of the official website for **Michael High School & Marceline Junior College of Arts, Science & Commerce**, Kurla West, Mumbai. Managed by the Catholic Education Society (CES), established 1979.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Built with **Astro + Tailwind CSS** — outputs pure static HTML with no JavaScript runtime. Fast, accessible, and deployable anywhere.
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## Pages
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+| Route | Page |
+| :--- | :--- |
+| `/` | Home |
+| `/about` | About Us — Overview & Virtual Tour |
+| `/about/mission-vision` | Mission & Vision |
+| `/about/general-information` | General Information |
+| `/about/anthem` | Anthem Song |
+| `/about/staff` | Staff Directory |
+| `/about/committees` | Committees |
+| `/facilities` | Facilities |
+| `/accreditation` | Accreditation |
+| `/fee-structure` | Fee Structure |
+| `/activities` | Activities Overview |
+| `/activities/scholastic` | Scholastic Activities |
+| `/activities/co-scholastic` | Co-Scholastic Activities |
+| `/activities/departments-clubs` | Departments & Clubs |
+| `/contact` | Contact Us |
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Tech Stack
 
-Any static assets, like images, can be placed in the `public/` directory.
+- **[Astro](https://astro.build)** — static site generator, zero JS runtime
+- **[Tailwind CSS v4](https://tailwindcss.com)** — utility-first styling
+- **Google Fonts** — Playfair Display (headings) + Inter (body)
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## Design
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- Primary colour: `#1c5d38` (institutional green, matched to the school building)
+- Accent: `#f5a623` (gold)
+- Mobile-first responsive layout
+- WCAG AA accessible — skip link, `aria-*` attributes, keyboard navigation, `focus-visible` rings
+- School crest used as favicon (16px, 32px, 180px apple-touch-icon)
 
-## 👀 Want to learn more?
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Commands
+
+| Command | Action |
+| :--- | :--- |
+| `npm install` | Install dependencies |
+| `npm run dev` | Start dev server at `localhost:4321` |
+| `npm run dev -- --port 3000` | Start on a custom port |
+| `npm run build` | Build to `./dist/` |
+| `npm run preview` | Preview production build locally |
+
+---
+
+## Deploy
+
+The `./dist` folder after `npm run build` is a self-contained static site. Drop it on:
+
+- **Netlify** — drag & drop the `dist` folder at netlify.com/drop
+- **Vercel** — `vercel --prod` from the project root
+- **cPanel / shared hosting** — upload contents of `dist` to `public_html`
+
+---
+
+## Credits
+
+Designed and built by **Zaid** as a free community contribution to Michael High School, Kurla West, Mumbai.
